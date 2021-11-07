@@ -52,3 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'auth/login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// $route['itk/delete/(:any)'] = "Itk/delete/$1";
+$route['whatsapp/send/(:any)/(:any)'] = 'whatsapp/send/$1/$2';

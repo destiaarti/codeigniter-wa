@@ -4,3 +4,5 @@
 <link href="<?php echo base_url('assets');?>/vendor/Ionicons/css/ionicons.min.css" rel="stylesheet">
 <link href="<?php echo base_url('assets');?>/vendor/AdminLTE-2.4.3/css/AdminLTE.min.css" rel="stylesheet">
 <link href="<?php echo base_url('assets');?>/vendor/AdminLTE-2.4.3/css/skins/_all-skins.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+

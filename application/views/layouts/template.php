@@ -25,6 +25,32 @@
 		<!-- content -->
 		<div class="content-wrapper">
 			<!-- Main content -->
+			<?php
+if ($this->session->flashdata('Edit')) {
+   
+ echo "<div class='alert alert-info alert-dismissible fade in' role='alert'><span class='glyphicon glyphicon-wrench' aria-hidden='true'></span>";
+    echo $this->session->flashdata('Edit');
+    echo "</div>";
+}
+elseif($this->session->flashdata('Error')){
+
+   echo "<div class='alert alert-danger alert-dismissible fade in' role='alert'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span>";
+   echo $this->session->flashdata('Error');
+    echo "</div>";
+}
+
+elseif($this->session->flashdata('Hapus')){
+
+	echo "<div class='alert alert-danger alert-dismissible fade in' role='alert'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span>";
+	echo $this->session->flashdata('Hapus');
+	 echo "</div>";
+ }elseif($this->session->flashdata('Tambah')){
+
+	echo "<div class='alert alert-success alert-dismissible fade in' role='alert'><span class='glyphicon glyphicon-arrow-down' aria-hidden='true'></span>";
+	echo $this->session->flashdata('Tambah');
+	 echo "</div>";
+ }
+?>
 			<section class="content">
 				<?php echo $contents ;?>
 			</section>

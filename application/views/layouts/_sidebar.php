@@ -17,56 +17,32 @@
     </div>
 
     <!-- search form (Optional) -->
-    <form action="#" method="get" class="sidebar-form">
-      <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Search...">
-        <span class="input-group-btn">
-              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-              </button>
-            </span>
-      </div>
-    </form>
-    <!-- /.search form -->
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">HEADER</li>
+      <li class="header">HOME</li>
       <!-- Optionally, you can add icons to the links -->
       <li class="active"><a href="<?=base_url()?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-			<li><a href="<?=base_url('/admin/person')?>"><i class="fa fa-users"></i> <span>Person</span></a></li>
-      <li><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-     <li class="treeview" style="height: auto;">
+     <?php if($userdata->id_role == 1) {?> 
+      <li><a href="<?=base_url('/admin/user')?>"><i class="fa fa-users"></i> <span>User</span></a></li>
+      <?php } ?>
+      <li class="treeview">
           <a href="#">
-            <i class="fa fa-share"></i> <span>Multilevel</span>
+            <i class="fa fa-files-o"></i>
+            <span>ITK</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+              <span class="label label-primary pull-right">3</span>
             </span>
           </a>
-          <ul class="treeview-menu" style="display: none;">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-            <li class="treeview" style="height: auto;">
-              <a href="#"><i class="fa fa-circle-o"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu" style="display: none;">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu" style="display: none;">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+          <ul class="treeview-menu">
+          <li><a href="<?=base_url('/itk')?>"><i class="fa fa-users"></i> <span>SEMUA ITK</span></a></li>
+          <li><a href="<?=base_url('/itk/itk_30')?>"><i class="fa fa-users"></i> <span>ITK 30 HARI</span></a></li>
+        <li><a href="<?=base_url('/itk/itk_60')?>"><i class="fa fa-users"></i> <span>ITK 60 HARI</span></a></li>
           </ul>
+        </li>
+
+      <li><a href="<?=base_url('/visa')?>"><i class="fa fa-link"></i> <span>Visa</span></a></li>
+   
         </li>
     </ul>
     <!-- /.sidebar-menu -->

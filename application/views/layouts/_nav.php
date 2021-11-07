@@ -132,7 +132,7 @@
 			<li class="dropdown user user-menu">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="<?= base_url('assets/uploads/images/foto_profil/'.$userdata->photo); ?>" class="user-image">
-                <span class="hidden-xs"><?= $userdata->first_name; ?> <?= $userdata->last_name; ?></span>
+                <span class="hidden-xs"><span style="color:yellow">Hi, </span><?= $userdata->first_name; ?></span>
             </a>
 				<ul class="dropdown-menu">
 					<!-- User image -->

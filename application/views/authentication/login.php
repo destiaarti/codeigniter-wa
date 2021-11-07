@@ -1,6 +1,6 @@
 <div class="login-box">
 	<div class="login-logo">
-		<a href="<?php echo base_url(); ?>"><b><?php echo $site['nama_website']?></b></a>
+		<a href="<?php echo base_url(); ?>"><b>Diponegoro International Office</b></a>
 	</div>
 	<!-- /.login-logo -->
 	<div class="login-box-body">
@@ -34,7 +34,7 @@
 		<?php echo $this->session->flashdata('alert', true)?>
 	</div>
 	<br>
-	<div class="box box-solid box-info">
+	<!-- <div class="box box-solid box-info">
 		<div class="box-header">
 				<h3 class="box-title">User Login</h3>
 		</div>
@@ -43,7 +43,7 @@
 			<b>E-mail</b> : member@mail.com (member)<br>
 			<b>Password</b> : password
 	</div> 
-</div>
+</div> -->
 
 <script>
 	$(function() {

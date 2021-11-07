@@ -1,23 +1,6 @@
 <?php 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-/*
- * |==============================================================|
- * | Please DO NOT modify this information :                      |
- * |--------------------------------------------------------------|
- * | Author          : Susantokun
- * | Email           : admin@susantokun.com
- * | Filename        : Auth.php
- * | Instagram       : @susantokun
- * | Blog            : http://www.susantokun.com
- * | Info            : http://info.susantokun.com
- * | Demo            : http://demo.susantokun.com
- * | Youtube         : http://youtube.com/susantokun
- * | File Created    : Thursday, 12th March 2020 10:34:33 am
- * | Last Modified   : Thursday, 12th March 2020 10:57:22 am
- * |==============================================================|
- */
-
 class Auth extends MY_Controller
 {
     public function __construct()
@@ -224,12 +207,12 @@ class Auth extends MY_Controller
     {
         $data = konfigurasi('Login');
         //melakukan pengalihan halaman sesuai dengan levelnya
-        if ($this->session->userdata('id_role') == "1") {
-            redirect('admin/home');
-        }
-        if ($this->session->userdata('id_role') == "2") {
-            redirect('member/home');
-        }
+        // if ($this->session->userdata('id_role') == "1") {
+        //     redirect('admin/home');
+        // }
+        // if ($this->session->userdata('id_role') == "2") {
+            redirect('home');
+        // }
 
         //proses login dan validasi nya
         if ($this->input->post('submit')) {
