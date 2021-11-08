@@ -207,12 +207,10 @@ class Auth extends MY_Controller
     {
         $data = konfigurasi('Login');
         //melakukan pengalihan halaman sesuai dengan levelnya
-        // if ($this->session->userdata('id_role') == "1") {
-        //     redirect('admin/home');
-        // }
-        // if ($this->session->userdata('id_role') == "2") {
+        if ($this->session->userdata('id_role') == "1" || $this->session->userdata('id_role') == "2") {
             redirect('home');
-        // }
+        }
+        // redirect('admin/home');
 
         //proses login dan validasi nya
         if ($this->input->post('submit')) {
@@ -223,12 +221,11 @@ class Auth extends MY_Controller
             if ($this->form_validation->run() && $error === true) {
                 $data = $this->Auth_model->check_account($this->input->post('email'), $this->input->post('password'));
 
-                //jika bernilai TRUE maka alihkan halaman sesuai dengan level nya
-                if ($data->id_role == '1') {
-                    redirect('admin/home');
-                } elseif ($data->id_role == '2') {
-                    redirect('member/home');
-                }
+                // jika bernilai TRUE maka alihkan halaman sesuai dengan level nya
+                if ($data->id_role == '1' || $data->id_role == '2') {
+                    redirect('home');
+                } 
+                // redirect('admin/home');
             } else {
                 $this->template->load('authentication/layouts/template', 'authentication/login', $data);
             }

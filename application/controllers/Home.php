@@ -25,6 +25,6 @@ class Home extends MY_Controller
         $data['itk_count_status'] = $this->Itk_model->get_count_status();
         $data['itk_count_30'] = $this->Itk_model->get_count_30();
         $data['itk_count_60'] = $this->Itk_model->get_count_60();
-        $this->template->load('layouts/template', 'admin/dashboard', $data);
+        $this->template->load('layouts/template', 'dashboard', $data);
     }
 }
