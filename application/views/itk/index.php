@@ -6,7 +6,7 @@
 	<a href="<?php echo site_url('itk/add') ?>" class="btn bg-navy btn-flat margin">Add New ITK</a>
 </div>
 <div class="table-responsive" style="padding-top: 6px">
-	<table class="table table-striped table-hover table-condensed text-center" id="mytable" style="width: 100%">
+	<table class="table table-striped table-hover table-condensed text-center" id="tabel6kolomitk" style="width: 100%">
 		<thead>
 			<tr class="active">
 				<th width="30px" style="padding-left: 20px;">No</th>
@@ -17,7 +17,6 @@
 				<th>SEND NOTIFICATION</th>
 				<th>STATUS</th>
 
-				<th></th>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -63,7 +62,7 @@
 
 <script type="text/javascript">
     $(".remove").click(function(){
-		var table=$(this).parents("table").attr("mytable");
+		var table=$(this).parents("table").attr("tabel6kolomitk");
         var id = $(this).parents("tr").attr("id");
 
     

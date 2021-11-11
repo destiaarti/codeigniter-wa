@@ -6,7 +6,8 @@
 				<th>Username</th>
 				<th>Email</th>
 				<th>Phone</th>
-				<th class="text-center" width="160px" style="padding-left: 20px;">Tindakan</th>
+				<th>Last Login</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -17,10 +18,9 @@
 					<td><?= $users->username ?></td>
 					<td><?= $users->email ?></td>
 					<td><?= $users->phone ?></td>
-					<td class="text-center" width="160px" style="padding-left: 20px;">
-						<?php echo anchor('admin/users/detail/' . $users->id, 'Detail'); ?> |
-						<?php echo anchor('admin/users/edit/' . $users->id, 'Update'); ?> |
-						<?php echo anchor('admin/users/delete/' . $users->id, 'Delete'); ?>
+					<td><?= $users->last_login ?></td>
+					<td>
+					  <?php echo anchor(site_url('admin/user/edit/' . $users->id), 'Edit Password', array('data-toggle' => 'tooltip', 'title' => 'edit data', 'class' => 'btn bg-navy btn-normal')) ?>
 					</td>
 				</tr>
 			<?php } ?>

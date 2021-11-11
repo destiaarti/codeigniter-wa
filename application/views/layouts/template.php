@@ -56,11 +56,13 @@ elseif($this->session->flashdata('Hapus')){
 			</section>
 		</div>
 		<!-- footer -->
+		<?php require_once('_table.php') ;?>
 		<?php require_once('_footer.php') ;?>
 
 		<div class="control-sidebar-bg"></div>
 	</div>
 	<!-- js -->
+
 	<?php require_once('_js.php') ;?>
 </body>
 

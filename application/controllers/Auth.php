@@ -61,13 +61,14 @@ class Auth extends MY_Controller
 
     public function updatePassword()
     {
-        $this->form_validation->set_rules('passLama', 'Password Lama', 'trim|required|min_length[5]|max_length[25]');
+        // $this->form_validation->set_rules('passLama', 'Password Lama', 'trim|required|min_length[5]|max_length[25]');
         $this->form_validation->set_rules('passBaru', 'Password Baru', 'trim|required|min_length[5]|max_length[25]');
         $this->form_validation->set_rules('passKonf', 'Password Konfirmasi', 'trim|required|min_length[5]|max_length[25]');
 
         $id = $this->session->userdata('id');
         if ($this->form_validation->run() == true) {
-            if (password_verify($this->input->post('passLama'), $this->session->userdata('password'))) {
+            // if (password_verify($this->input->post('passLama'), $this->session->userdata('password'))) {
+              if (password_verify($this->session->userdata('password'))) {
                 if ($this->input->post('passBaru') != $this->input->post('passKonf')) {
                     $this->session->set_flashdata('msg', show_err_msg('Password Baru dan Konfirmasi Password harus sama'));
                     redirect('auth/profile');
@@ -90,6 +91,41 @@ class Auth extends MY_Controller
         } else {
             $this->session->set_flashdata('msg', show_err_msg(validation_errors()));
             redirect('auth/profile');
+        }
+    }
+
+
+    public function changePasswordUser()
+    {
+        // $this->form_validation->set_rules('passLama', 'Password Lama', 'trim|required|min_length[5]|max_length[25]');
+        $this->form_validation->set_rules('passBaru', 'Password Baru', 'trim|required|min_length[5]|max_length[25]');
+        $this->form_validation->set_rules('passKonf', 'Password Konfirmasi', 'trim|required|min_length[5]|max_length[25]');
+        $id = $this->input->post('id');
+        if ($this->form_validation->run() == true) {
+            // if (password_verify($this->input->post('passLama'), $this->session->userdata('password'))) {
+              if (password_verify($this->session->userdata('password'))) {
+                if ($this->input->post('passBaru') != $this->input->post('passKonf')) {
+                    $this->session->set_flashdata('msg', show_err_msg('Password Baru dan Konfirmasi Password harus sama'));
+                    redirect('admin/user');
+                } else {
+                    $data = ['password' => get_hash($this->input->post('passBaru'))];
+                    $result = $this->Auth_model->update($data, $id);
+                    if ($result > 0) {
+                        $this->updateProfil();
+                        $this->session->set_flashdata('msg', show_succ_msg('Password Berhasil diubah'));
+                        redirect('admin/user');
+                    } else {
+                        $this->session->set_flashdata('msg', show_err_msg('Password Gagal diubah'));
+                        redirect('admin/user');
+                    }
+                }
+            } else {
+                $this->session->set_flashdata('msg', show_err_msg('Password Salah'));
+                redirect('admin/user');
+            }
+        } else {
+            $this->session->set_flashdata('msg', show_err_msg(validation_errors()));
+            redirect('admin/user');
         }
     }
 
