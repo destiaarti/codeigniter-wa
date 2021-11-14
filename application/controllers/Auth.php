@@ -61,14 +61,13 @@ class Auth extends MY_Controller
 
     public function updatePassword()
     {
-        // $this->form_validation->set_rules('passLama', 'Password Lama', 'trim|required|min_length[5]|max_length[25]');
+        $this->form_validation->set_rules('passLama', 'Password Lama', 'trim|required|min_length[5]|max_length[25]');
         $this->form_validation->set_rules('passBaru', 'Password Baru', 'trim|required|min_length[5]|max_length[25]');
         $this->form_validation->set_rules('passKonf', 'Password Konfirmasi', 'trim|required|min_length[5]|max_length[25]');
 
         $id = $this->session->userdata('id');
         if ($this->form_validation->run() == true) {
-            // if (password_verify($this->input->post('passLama'), $this->session->userdata('password'))) {
-              if (password_verify($this->session->userdata('password'))) {
+            if (password_verify($this->input->post('passLama'), $this->session->userdata('password'))) {
                 if ($this->input->post('passBaru') != $this->input->post('passKonf')) {
                     $this->session->set_flashdata('msg', show_err_msg('Password Baru dan Konfirmasi Password harus sama'));
                     redirect('auth/profile');
@@ -224,7 +223,7 @@ class Auth extends MY_Controller
               'is_login'    => true,
               'id'          => $query->id,
               'password'    => $query->password,
-              'id_role'     => $query->id_role,
+              'role'     => $query->role,
               'username'    => $query->username,
               'first_name'  => $query->first_name,
               'last_name'   => $query->last_name,
@@ -243,7 +242,7 @@ class Auth extends MY_Controller
     {
         $data = konfigurasi('Login');
         //melakukan pengalihan halaman sesuai dengan levelnya
-        if ($this->session->userdata('id_role') == "1" || $this->session->userdata('id_role') == "2") {
+        if ($this->session->userdata('role') == "admin" || $this->session->userdata('role') == "admin fakultas") {
             redirect('home');
         }
         // redirect('admin/home');
@@ -258,7 +257,7 @@ class Auth extends MY_Controller
                 $data = $this->Auth_model->check_account($this->input->post('email'), $this->input->post('password'));
 
                 // jika bernilai TRUE maka alihkan halaman sesuai dengan level nya
-                if ($data->id_role == '1' || $data->id_role == '2') {
+                if ($data->role == 'admin' || $data->role == 'admin fakultas') {
                     redirect('home');
                 } 
                 // redirect('admin/home');

@@ -31,7 +31,7 @@ INSERT INTO `tbl_role` VALUES (1,'Administrator','Hak akses Administrator'),(2,'
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_role` int(11) NOT NULL,
+  `role` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `password_reset_key` varchar(100) DEFAULT NULL,

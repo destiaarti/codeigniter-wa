@@ -11,7 +11,7 @@
 				<h3 class="profile-username text-center"><?= $userdata->first_name; ?> <?= $userdata->last_name; ?></h3>
 
 				<p class="text-muted text-center">
-					<?= $userdata->name;?>
+					<?= $userdata->role;?>
 				</p>
 
 				<ul class="list-group list-group-unbordered">

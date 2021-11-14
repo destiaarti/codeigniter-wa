@@ -18,8 +18,10 @@
 				<th>SEND NOTIFICATION</th>
 				<th>STATUS</th>
 
+				<?php if($userdata->role == "admin fakultas") {?> 
 				<th></th>
 				<th></th>
+				<? } ?>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -42,8 +44,10 @@
 						?> <button type="button" class="btn bg-green btn-flat margin">sent</button> <?
 					} ?>
 					</td>
+					<?php if($userdata->role == "admin fakultas") {?> 
 					<td><?php echo anchor(site_url('email/send/' . $visa->id.'/visa'), 'Send Email', array('data-toggle' => 'tooltip', 'title' => 'edit data', 'class' => 'btn bg-purple btn-normal')) ?></td>
 					<td><?php echo anchor(site_url('whatsapp/send/' . $visa->id.'/visa'), 'Send Wa', array('data-toggle' => 'tooltip', 'title' => 'edit data', 'class' => 'btn bg-olive btn-normal')) ?></td>
+					<? } ?>
 					<td><?php echo anchor(site_url('visa/edit/' . $visa->id), 'Edit', array('data-toggle' => 'tooltip', 'title' => 'edit data', 'class' => 'btn bg-orange btn-normal')) ?></td>
 					<td><?php echo anchor(site_url('visa/detail/' . $visa->id), 'Detail', array('data-toggle' => 'tooltip', 'title' => 'edit data', 'class' => 'btn bg-navy btn-normal')) ?></td>
 					

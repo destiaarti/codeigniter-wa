@@ -26,8 +26,8 @@
 					<button type="submit" name="submit" value="login" class="btn btn-primary btn-block btn-flat"><i class="fa fa-sign-in" aria-hidden="true"></i> Masuk</button>
 				</div>
 			</div>
-			<a href="<?php echo base_url('auth/forgot_password');?>"> Lupa Kata Sandi?</a><br>
-			<a href="<?php echo base_url('auth/register');?>"> Daftar Akun</a>
+			<!-- <a href="<?php echo base_url('auth/forgot_password');?>"> Lupa Kata Sandi?</a><br>
+			<a href="<?php echo base_url('auth/register');?>"> Daftar Akun</a> -->
 		</form>
 	</div>
 	<div id="myalert">

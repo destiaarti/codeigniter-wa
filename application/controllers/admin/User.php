@@ -8,7 +8,7 @@ class User extends MY_Controller
         parent::__construct();
         $this->load->model('User_model');
         $this->check_login();
-        if ($this->session->userdata('id_role') != '1') {
+        if ($this->session->userdata('role') != 'admin') {
             redirect('', 'refresh');
         }
     }

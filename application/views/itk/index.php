@@ -16,9 +16,10 @@
 				<th>DEADLINE TO EXPIRE</th>
 				<th>SEND NOTIFICATION</th>
 				<th>STATUS</th>
-
+				<?php if($userdata->role == "admin fakultas") {?> 
 				<th></th>
 				<th></th>
+				<? } ?>
 				<th></th>
 				<th></th>
 				<th></th>
@@ -40,8 +41,10 @@
 						?> <button type="button" class="btn bg-green btn-flat margin">sent</button> <?
 					} ?>
 					</td>
+					<?php if($userdata->role == "admin fakultas") {?> 
 							<td><?php echo anchor(site_url('email/send/' . $itk->id.'/itk'), 'Send Email', array('data-toggle' => 'tooltip', 'title' => 'edit data', 'class' => 'btn bg-purple btn-normal')) ?></td>
 					<td><?php echo anchor(site_url('whatsapp/send/' . $itk->id.'/itk'), 'Send Wa', array('data-toggle' => 'tooltip', 'title' => 'edit data', 'class' => 'btn bg-olive btn-normal')) ?></td>
+					<? } ?>
 					<td><?php echo anchor(site_url('itk/edit/' . $itk->id), 'Edit', array('data-toggle' => 'tooltip', 'title' => 'edit data', 'class' => 'btn bg-orange btn-normal')) ?></td>
 					<td><?php echo anchor(site_url('itk/detail/' . $itk->id), 'Detail', array('data-toggle' => 'tooltip', 'title' => 'edit data', 'class' => 'btn bg-navy btn-normal')) ?></td>
 					

@@ -27,7 +27,7 @@
 					<!-- Menu Footer-->
 					<li class="user-footer">
 						<div class="pull-left">
-						<?php if($userdata->id_role == 1) {?> 
+						<?php if($userdata->role == "admin") {?> 
 							<a href="<?php echo base_url() ?>auth/profile/<?php echo $this->session->userdata('id_user'); ?>" class="btn btn-default btn-flat"><i class="fa fa-user" aria-hidden="true"></i> Profil</a>
 						<?php } ?>
 						</div>

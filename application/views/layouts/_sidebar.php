@@ -23,7 +23,7 @@
       <li class="header">HOME</li>
       <!-- Optionally, you can add icons to the links -->
       <li class="active"><a href="<?=base_url()?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-     <?php if($userdata->id_role == 1) {?> 
+     <?php if($userdata->role == "admin") {?> 
       <li><a href="<?=base_url('/admin/user')?>"><i class="fa fa-users"></i> <span>User</span></a></li>
       <?php } ?>
       <li class="treeview">
