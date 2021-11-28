@@ -18,7 +18,7 @@
 				<th>SEND NOTIFICATION</th>
 				<th>STATUS</th>
 
-				<?php if($userdata->role == "admin fakultas") {?> 
+				<?php if($userdata->role == "admin") {?> 
 				<th></th>
 				<th></th>
 				<? } ?>
@@ -44,7 +44,7 @@
 						?> <button type="button" class="btn bg-green btn-flat margin">sent</button> <?
 					} ?>
 					</td>
-					<?php if($userdata->role == "admin fakultas") {?> 
+					<?php if($userdata->role == "admin") {?> 
 					<td><?php echo anchor(site_url('email/send/' . $visa->id.'/visa'), 'Send Email', array('data-toggle' => 'tooltip', 'title' => 'edit data', 'class' => 'btn bg-purple btn-normal')) ?></td>
 					<td><?php echo anchor(site_url('whatsapp/send/' . $visa->id.'/visa'), 'Send Wa', array('data-toggle' => 'tooltip', 'title' => 'edit data', 'class' => 'btn bg-olive btn-normal')) ?></td>
 					<? } ?>
